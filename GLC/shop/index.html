@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="1.8.9 Minecraft Client" />
+    <meta
+      name="keywords"
+      content="Glacier, Client, GlacierClient, Minecraft, 1.8.9"
+    />
+    <meta charset="UTF-8" />
+    <script src="https://bs-community.github.io/skinview3d/js/skinview3d.bundle.js"></script>
+    <link rel="icon" href="https://www.glacierclient.net/glclogo_16x16.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/f819475713.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop | Glacier Client</title>
+  </head>
+  <body bgcolor="#1a1a1a" onload='location.reload();' id="rootBody">
+    <header>
+      <a href="../home">
+        <img class="navlogo" src="Images/White_Glacier_Icon.png" alt="logo" />
+      </a>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="../modules">MODULES</a></li>
+          <li><a href="../faq">FAQ</a></li>
+          <li><a href="../staff">STAFF</a></li>
+          <li><a href="../updates">UPDATES</a></li>
+          <li><a href="../support">SUPPORT</a></li>
+          <li><a href="../shop">SHOP</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <a class="cta" href="../download"><button>Download</button></a>
+
+      <div class="loggedin">
+        <div class="loggedin-right"> 
+          <img src="" id="loginImg" alt=""> 
+          <h2 id="loginName">Guest</h2>
+        </div> 
+        <div class="loggedin-left"> 
+          
+        </div>
+      </div>
+    </header>
+    <nav class="navbar2">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="../download" class="nav-link">Download</a>
+        </li>
+        <li class="nav-item">
+          <a href="../modules" class="nav-link">Modules</a>
+        </li>
+        <li class="nav-item">
+          <a href="../faq" class="nav-link">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a href="../staff" class="nav-link">Staff</a>
+        </li>
+        <li class="nav-item">
+          <a href="../updates" class="nav-link">Updates</a>
+        </li>
+        <li class="nav-item">
+          <a href="../support" class="nav-link">Support</a>
+        </li>
+        <li class="nav-item">
+          <a href="../shop" class="nav-link">Shop</a>
+        </li>
+      </ul>
+    </nav>
+    
+    <!-- Notifications -->
+    <div
+    class="notification"
+    id="notification"
+    >
+      <p id = "notiCont">
+        
+      </p>
+      <div  class="notiUndo">
+        <button id="undoBtn" 
+        
+        onclick="notiUndo()"
+        
+        >
+          Undo
+        </button>
+      </div>
+    </div>
+
+    <!-- prev -->
+
+    <div
+      class="staff-roles Animation" 
+      id="staff-roles"
+      onmousewheel="hideLogin()"
+    >
+      <div class="profile-container">
+        <div class="profile" id="profile-modal">
+          
+          <h2>
+            Cart:
+          </h2>
+
+          <ul>
+            <p id="ArrayOut">
+
+            </p>
+            <p id = "total" >
+
+            </p>
+          </ul>
+
+          <br>
+
+          <div  class="coutBtn">
+            <button onclick='loadCosms()'> <!-- pay() -->
+              Checkout
+            </button>
+            <button
+            onclick='notiUndo()' style="font-size:13px">
+              Remove Item
+            </button>
+          </div>
+          
+          
+        </div>
+      </div>
+
+      <h1 class="coming">Capes:</h1>
+      <br />
+
+      <!-- Cosmetics Display -->
+      <div class="cosmetic-preview grid-container" style="width: 80%" id="cosmetics-display"> <!--cosmetic-preview grid-container-->
+        <button onclick='loadCosms()'>
+          hey
+        </button>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor (
+                "Galaxy Cloak", //<-- Name
+                "Wings", //<-- Type
+                "5.00$", // <-- Cost
+                "555001" //<-- ID
+              ) '
+            />
+
+            <figcaption>
+              <h2 style="color: white;">Among Us</h2>
+            </figcaption>
+          </figure>
+
+
+
+
+          <!-- Cosmetic Template -->
+          <template id="tempCosmDisp">
+
+            <figure id="cosmDisp">
+              <img
+                src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+                width="100px"
+                height="100px"
+                onclick='cosmeticsConstructor (
+                  "Galaxy Cloak", //<-- Name
+                  "Wings", //<-- Type
+                  "5.00$", // <-- Cost
+                  "555001" //<-- ID
+                ) '
+                class="cosmDisplay"
+              />
+  
+              <figcaption>
+                <h2 style="color: white;" class="cosmName" >Among Us</h2>
+              </figcaption>
+            </figure>
+          </template>
+
+        
+        </div>
+      </div>
+
+
+
+
+
+        
+        <!-- template id="cosmeticTemplate">
+
+          <div>
+            <figure>
+              <img
+                
+                src=" "
+                width="100px"
+                height="100px"
+                onclick=''
+              />
+  
+              <figcaption>
+                <h2 class="cosmName"> </h2>
+              </figcaption>
+            </figure>
+
+          </div>
+
+        </template -->
+
+      <form id="form" onsubmit="return false;" style="display: none">
+        <input type="text" id="uuidInput" />
+        <input type="submit" onclick="fetchCosmetics();" />
+      </form>
+
+      
+      
+      <section class="footer">
+        <div class="social">
+          <a href="https://www.glacierclient.net/discord"
+            ><i class="fab fa-discord"></i
+          ></a>
+        </div>
+
+        <ul class="list">
+          <li>
+            <a href="../home">Home</a>
+          </li>
+          <li>
+            <a href="../modules">Modules</a>
+          </li>
+          <li>
+            <a href="../faq">FAQ</a>
+          </li>
+          <li>
+            <a href="../staff">Staff</a>
+          </li>
+          <li>
+            <a href="../updates">Updates</a>
+          </li>
+          <li>
+            <a href="../shop">Shop</a>
+          </li>
+          <li>
+            <a href="../download/">Download</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <section id="rootLogin" class="Animation">
+      <div id="login" style="display: block">
+        <div style="margin-top: 100px; text-align: center; display: block">
+          <h1
+            style="font-size: 25px; color: white; display: inline-block"
+            id="lgTitle"
+          >
+            Enter Your Minecraft Username(Case Sensitive)
+          </h1>
+        </div>
+
+        <div style="margin-top: 100px; text-align: center; display: block">
+          <form>
+            <input
+              type="text"
+              placeholder="Username"
+              id="usernameInput"
+              class="form"
+            />
+            <button class="btn" type="button" onclick="fetchAndLogin()">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!--<section>
+      <div id="rootPayPal" class="Animation">
+        <div id="payPalInfo">
+          <form action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+            <input class="form" name="cmd" value="_xclick">
+            <input  class="form"name="business" value="vince@engelbrecht.pro">
+            <input class="form" name="item_name" value="GLC-Cart-{PlayerName}-{ListOfCosmetics}">
+            <input class="form" name="currency_code" value="USD">
+          </form>     
+        </div>
+      </div>
+    </section> -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
